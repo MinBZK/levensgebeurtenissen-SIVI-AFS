@@ -3,6 +3,19 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 34.1.4">
 <style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
@@ -109,20 +122,6 @@ ul.index code{color:inherit}
 }
 </style>
 <meta name="description" content="Tekst">
-<style>
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
-.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
-.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
-.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
-.hljs-literal{color:#0b76c5}
-.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
-.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
-.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
-.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
-.hljs-emphasis{font-style:italic}
-.hljs-strong{font-weight:700}
-.hljs-link{text-decoration:underline}
-</style>
 <style>
 
   .sidelabel {
@@ -270,8 +269,7 @@ ul.index code{color:inherit}
       "authors": [
         "T. Preston-Werner"
       ],
-      "date": "June 2013",
-      "id": "semver"
+      "date": "June 2013"
     }
   },
   "specStatus": "wv",
@@ -368,7 +366,7 @@ ul.index code{color:inherit}
   </div>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Tekst</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">1. </bdi>Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzoek-van-doccle"><bdi class="secno">1.1 </bdi>Verzoek van Doccle</a></li><li class="tocline"><a class="tocxref" href="#standaardisatie-met-mogelijkheid-tot-eigen-invulling"><bdi class="secno">1.2 </bdi>Standaardisatie met mogelijkheid tot eigen invulling</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-acties-en-gebeurtenissen"><bdi class="secno">1.3 </bdi>Voorbeelden acties en gebeurtenissen</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.4 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.5 </bdi>Doelgroep</a></li></ol></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">2.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">2.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">2.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">2.4 </bdi>Optioneel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">4. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav><section class="informative" id="context"><div class="header-wrapper"><h2 id="x1-context"><bdi class="secno">1. </bdi>Context</h2><a class="self-link" href="#context" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">1. </bdi>Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzoek-van-doccle"><bdi class="secno">1.1 </bdi>Verzoek van Doccle</a></li><li class="tocline"><a class="tocxref" href="#standaardisatie-met-mogelijkheid-tot-eigen-invulling"><bdi class="secno">1.2 </bdi>Standaardisatie met mogelijkheid tot eigen invulling</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-acties-en-gebeurtenissen"><bdi class="secno">1.3 </bdi>Voorbeelden acties en gebeurtenissen</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.4 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.5 </bdi>Doelgroep</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vertrekpunten"><bdi class="secno">2. </bdi>Vertrekpunten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wat-is-een-signaal"><bdi class="secno">2.1 </bdi>Wat is een signaal?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-gebeurtenissen-en-welke-soorten-gebeurtenissen-onderkennen-we"><bdi class="secno">2.2 </bdi>Wat zijn gebeurtenissen en welke soorten gebeurtenissen onderkennen we?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-acties"><bdi class="secno">2.3 </bdi>Wat zijn acties?</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">2.4 </bdi>Use cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li></ol></nav><section class="informative" id="context"><div class="header-wrapper"><h2 id="x1-context"><bdi class="secno">1. </bdi>Context</h2><a class="self-link" href="#context" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
 <section id="verzoek-van-doccle"><div class="header-wrapper"><h3 id="x1-1-verzoek-van-doccle"><bdi class="secno">1.1 </bdi>Verzoek van Doccle</h3><a class="self-link" href="#verzoek-van-doccle" aria-label="Permalink for Section 1.1"></a></div>
 <p>Doccle heeft bij SIVI het verzoek neergelegd tot standaardisatie van gebeurtenissen en signalen. Dit verzoek richt zich op het standaardiseren van triggers/events (bijv. levensgebeurtenissen) en bijbehorende acties. ANVA werkt mee in dit traject.</p>
 <p>Tijdens een gebeurtenis (van de persoon zelf of een persoon in zijn/haar omgeving) moet een consument vaak allerlei acties uit (laten) voeren. De wens is dat (bijvoorbeeld) een adviseur of verzekeraar deze acties eenvoudig en gestandaardiseerd onder de aandacht van de consument kan brengen middels een signaal.</p>
@@ -383,36 +381,28 @@ ul.index code{color:inherit}
 </ul>
 <p>Zie ook hoofdstuk 2 voor de vertrekpunten en definities van gebeurtenissen, acties en signalen.</p>
 </section><section id="doel"><div class="header-wrapper"><h3 id="x1-4-doel"><bdi class="secno">1.4 </bdi>Doel</h3><a class="self-link" href="#doel" aria-label="Permalink for Section 1.4"></a></div>
-<p>Deze notitie geeft een opzet voor het standaardiseren van gebeurtenissen1 en acties, als ook een berichtstructuur voor het uitwisselen van signalen om zulke gebeurtenissen en acties uit te wisselen of te registreren.</p>
+<p>Deze notitie geeft een opzet voor het standaardiseren van gebeurtenissen en acties, als ook een berichtstructuur voor het uitwisselen van signalen om zulke gebeurtenissen en acties uit te wisselen of te registreren.</p>
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Noot</span><span class="issue-label">: notie</span></div><p class="">
+SIVI gaat voor haar standaarden altijd uit van een zo generiek mogelijke invulling van de standaard. De notitie en uitbreiding van de standaard zullen dan ook gebeurtenissen in de ruimste zin van het woord faciliteren. Specifiek levensgebeurtenissen uit het oorspronkelijke verzoek van Doccle/ANVA zijn een specifieke invulling hiervan. In de voorbeelden in deze notitie zullen levensgebeurtenissen wel de leidraad vormen.
+</p></div>
+
+
 </section><section id="doelgroep"><div class="header-wrapper"><h3 id="x1-5-doelgroep"><bdi class="secno">1.5 </bdi>Doelgroep</h3><a class="self-link" href="#doelgroep" aria-label="Permalink for Section 1.5"></a></div>
 <p>Ontwikkelaars van toepassingen waarbij het uitwisselen/registreren van signalen rondom gebeurtenissen en bijbehorende acties, waarde toevoegt voor de consument, adviseur of aanbieder.</p>
-</section></section><section id="meer-inhoud"><div class="header-wrapper"><h2 id="x2-meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 2."></a></div>
-<section id="definities"><div class="header-wrapper"><h3 id="x2-1-definities"><bdi class="secno">2.1 </bdi>Definities</h3><a class="self-link" href="#definities" aria-label="Permalink for Section 2.1"></a></div>
-<p><dfn id="dfn-definitie" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor definitie is betekenis of beschrijving.</p>
-</section><section id="afbeeldingen"><div class="header-wrapper"><h3 id="x2-2-afbeeldingen"><bdi class="secno">2.2 </bdi>Afbeeldingen</h3><a class="self-link" href="#afbeeldingen" aria-label="Permalink for Section 2.2"></a></div>
-<p>Afbeeldingen krijgen een nummer en vermelding in de figurenlijst <a href="#tof" data-matched-text="[[[#tof]]]" class="sec-ref"><bdi class="secno">4. </bdi>Lijst met figuren</a>.</p>
-<p>
-      </p><figure id="fig-onderschrift">
-        <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
-      </figure>
-    <p></p>
-</section><section id="referenties"><div class="header-wrapper"><h3 id="x2-3-referenties"><bdi class="secno">2.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 2.3"></a></div>
-<p>Referentie uit locale lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>]. Lijst staat in <code>organisation-config.js</code>. Alleen referenties die in de tekst voorkomen worden getoond.</p>
-<p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-1">definitie</a> om een woord te omschrijven.</p>
-</section><section id="optioneel"><div class="header-wrapper"><h3 id="x2-4-optioneel"><bdi class="secno">2.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 2.4"></a></div>
-<p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-</code></pre>
+</section></section><section id="vertrekpunten"><div class="header-wrapper"><h2 id="x2-vertrekpunten"><bdi class="secno">2. </bdi>Vertrekpunten</h2><a class="self-link" href="#vertrekpunten" aria-label="Permalink for Section 2."></a></div>
+<section id="wat-is-een-signaal"><div class="header-wrapper"><h3 id="x2-1-wat-is-een-signaal"><bdi class="secno">2.1 </bdi>Wat is een signaal?</h3><a class="self-link" href="#wat-is-een-signaal" aria-label="Permalink for Section 2.1"></a></div>
+<p>Een signaal is een bericht vanuit een partij naar een andere partij naar aanleiding van een gebeurtenis met het verzoek om actie te ondernemen.</p>
+<p>Bijvoorbeeld: een adviseur of verzekeraar stuurt, omdat een klant 18 jaar is geworden, het verzoek om de betaalgegevens te updaten. Een signaal kan ook vanuit de consument komen, wanneer deze een gebeurtenis initieert – bijvoorbeeld voor het doorgeven van een verhuizing.</p>
+</section><section id="wat-zijn-gebeurtenissen-en-welke-soorten-gebeurtenissen-onderkennen-we"><div class="header-wrapper"><h3 id="x2-2-wat-zijn-gebeurtenissen-en-welke-soorten-gebeurtenissen-onderkennen-we"><bdi class="secno">2.2 </bdi>Wat zijn gebeurtenissen en welke soorten gebeurtenissen onderkennen we?</h3><a class="self-link" href="#wat-zijn-gebeurtenissen-en-welke-soorten-gebeurtenissen-onderkennen-we" aria-label="Permalink for Section 2.2"></a></div>
+<p>Als uitgangspunt voor deze notitie hanteren we twee soorten gebeurtenissen:</p>
+<ul>
+<li>Levensgebeurtenissen: gebeurtenissen in het leven van de consument die mogelijk acties vereisen. Voorbeelden: 18 jaar worden, overlijden, scheiding, verhuizing.</li>
+<li>Servicegerelateerde gebeurtenissen: gebeurtenissen met betrekking op de dienstovereenkomst tussen consument en aanbieder die mogelijk acties vereisen. Voorbeelden: aflopen rentevastperiode, premieafschrijving, einde servicecontract.</li>
+</ul>
+</section><section id="wat-zijn-acties"><div class="header-wrapper"><h3 id="x2-3-wat-zijn-acties"><bdi class="secno">2.3 </bdi>Wat zijn acties?</h3><a class="self-link" href="#wat-zijn-acties" aria-label="Permalink for Section 2.3"></a></div>
+<p>Een actie is een taak die een partij moet uitvoeren naar aanleiding van een of meer gebeurtenissen. Bijvoorbeeld het updaten van de betaalgegevens (actie) wanneer de premieafschrijving gaat plaatsvinden (servicegerelateerde gebeurtenis), of het aanvragen van een zorgverzekering (actie) wanneer de consument 18 jaar wordt (levensgebeurtenis).</p>
+</section><section id="use-cases"><div class="header-wrapper"><h3 id="x2-4-use-cases"><bdi class="secno">2.4 </bdi>Use cases</h3><a class="self-link" href="#use-cases" aria-label="Permalink for Section 2.4"></a></div>
+<p>Voor deze notitie zijn vanuit Doccle en ANVA drie use cases opgesteld. Deze vind je in de bijlagen, inclusief voorbeelduitwerkingen in de voor SIVI AFS opgestelde denkrichting van deze notitie.</p>
 </section></section>
   <script>
     let content = "";
@@ -428,17 +418,11 @@ ul.index code{color:inherit}
     document.getElementById("sotd").insertAdjacentHTML('afterend', content);
   </script>
   <section id="conformance"><div class="header-wrapper"><h2 id="x3-conformiteit"><bdi class="secno">3. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 3."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
-  <section id="tof"><div class="header-wrapper"><h2 id="x4-lijst-met-figuren"><bdi class="secno">4. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 4."></a></div><ul class="tof">
-        <li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title">Onderschrift</span></a>
-  </li>
-      </ul></section>
+  <section id="tof"></section>
   <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
     <div class="header-wrapper"><h3 id="a-1-begrippen-gedefinieerd-door-deze-specificatie"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
     <ul class="index">
-    <li>
-      <a class="index-term" href="#dfn-definitie">Definitie</a> 
-    <span class="print-only">§2.1</span></li>
+    
   </ul>
   </section><section id="index-defined-elsewhere">
     <div class="header-wrapper"><h3 id="a-2-begrippen-gedefinieerd-door-verwijzing"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
@@ -449,26 +433,9 @@ ul.index code{color:inherit}
 
 
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normatieve-referenties">
-    <div class="header-wrapper"><h3 id="b-1-normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
-    <dl class="bibliography"><dt id="bib-semver">[SemVer]</dt><dd>
-      <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
-    </dd></dl>
-  </section></section><p role="navigation" id="back-to-top">
+<p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-definitie" aria-label="Links in this document to definition: Definitie">
-      <span class="caret"></span>
-      <div>
-        <a class="self-link" href="#dfn-definitie" aria-label="Permalink for definition: Definitie. Activate to close this dialog.">Permalink</a>
-         
-      </div>
-      <p><b>Referenced in:</b></p>
-      <ul>
-    <li>
-    <a href="#ref-for-dfn-definitie-1" title="§ 2.3 Referenties">§ 2.3 Referenties</a> 
-  </li>
-  </ul>
-    </div><script id="respec-dfn-panel">(() => {
+  </p><script id="respec-dfn-panel">(() => {
 // @ts-check
 if (document.respec) {
   document.respec.ready.then(setupPanel);

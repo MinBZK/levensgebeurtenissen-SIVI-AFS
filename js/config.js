@@ -20,7 +20,7 @@ let respecConfig = {
     "Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)",
 
   // Content
-  content: { ch01: "informative", ch02: "" },
+  content: { ch01: "informative", ch02: "", ch03: "" },
   editors: [
     {
       name: "Steven Gort",

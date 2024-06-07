@@ -15,7 +15,7 @@ let respecConfig = {
   previousPublishVersion: "",
   previousPublishDate: "",
   previousMaturity: "",
-  title: "levensgebeurtenissen-SIVI-AFS ",
+  title: "Levensgebeurtenissen SIVI AFS ",
   subtitle:
     "Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)",
 

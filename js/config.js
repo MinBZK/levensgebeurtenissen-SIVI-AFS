@@ -1,43 +1,47 @@
 let respecConfig = {
+  // Config parameters
   useLogo: true,
   useLabel: true,
-  license: "cc-by",
-  specStatus: "DEF",
-  specType: "HR",
-  pubDomain: "dk",
-  shortName: "template",
-  publishDate: "2023-06-21",
-  publishVersion: "0.0.3",
-  
-  previousPublishVersion: "0.0.2",
-  previousPublishDate: "2022-06-24",
-  previousMaturity: "WV",
-  title: "titleText",
-  content: {"ch01": "informative", "ch02": "", "mermaid": ""},
-  editors:
-    [
-      {
-        name: "Logius Standaarden",
-        company: "Logius",
-        companyURL: "https://github.com/Logius-standaarden",
-      }
-    ],
-  authors:
-    [
-      {
-        name: "Logius Standaarden",
-        company: "Logius",
-        companyURL: "https://github.com/Logius-standaarden",
-      }
-    ],
-  github: "https://github.com/Logius-standaarden/ReSpec-template",
+  license: "cc0",
+  specStatus: "wv",
+  specType: "ST",
+  pubDomain: "ronl",
 
+  // shortName = Repository name
+  shortName: "levensgebeurtenissen-SIVI-AFS ",
+  publishDate: "2024-06-07",
+  publishVersion: "1.0.0",
+
+  previousPublishVersion: "",
+  previousPublishDate: "",
+  previousMaturity: "",
+  title: "levensgebeurtenissen-SIVI-AFS ",
+  subtitle:
+    "Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)",
+
+  // Content
+  content: { ch01: "informative", ch02: "", ch03: "", ch04: "" },
+  editors: [
+    {
+      name: "Steven Gort",
+      mailto: "steven.gort@ictu.nl",
+      company: "ICTU",
+      companyURL: "http://www.ictu.nl",
+    },
+  ],
+  authors: [
+    {
+      name: "SIVI",
+      url: "https://www.sivi.org/",
+    },
+  ],
+  github: "https://github.com/MinBZK/levensgebeurtenissen-SIVI-AFS",
 
   // Create PDF and link to file in header (optional):
   alternateFormats: [
-      {
-          label: "pdf",
-          uri: "template.pdf",
-      },
+    {
+      label: "pdf",
+      uri: "levensgebeurtenissen-SIVI-AFS ",
+    },
   ],
 };

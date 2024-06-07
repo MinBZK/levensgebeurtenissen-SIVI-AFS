@@ -41,7 +41,7 @@ let respecConfig = {
   alternateFormats: [
     {
       label: "pdf",
-      uri: "levensgebeurtenissen-SIVI-AFS ",
+      uri: "levensgebeurtenissen-SIVI-AFS",
     },
   ],
 };

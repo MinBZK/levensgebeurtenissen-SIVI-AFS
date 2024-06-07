@@ -3,6 +3,15 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 34.1.4">
 <style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
 .warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
@@ -122,6 +131,20 @@ ul.index code{color:inherit}
 }
 </style>
 <meta name="description" content="Tekst">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
 <style>
 
   .sidelabel {
@@ -285,7 +308,8 @@ ul.index code{color:inherit}
   "subtitle": "Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)",
   "content": {
     "ch01": "informative",
-    "ch02": ""
+    "ch02": "",
+    "ch03": ""
   },
   "editors": [
     {
@@ -366,7 +390,7 @@ ul.index code{color:inherit}
   </div>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Tekst</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">1. </bdi>Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzoek-van-doccle"><bdi class="secno">1.1 </bdi>Verzoek van Doccle</a></li><li class="tocline"><a class="tocxref" href="#standaardisatie-met-mogelijkheid-tot-eigen-invulling"><bdi class="secno">1.2 </bdi>Standaardisatie met mogelijkheid tot eigen invulling</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-acties-en-gebeurtenissen"><bdi class="secno">1.3 </bdi>Voorbeelden acties en gebeurtenissen</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.4 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.5 </bdi>Doelgroep</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vertrekpunten"><bdi class="secno">2. </bdi>Vertrekpunten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wat-is-een-signaal"><bdi class="secno">2.1 </bdi>Wat is een signaal?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-gebeurtenissen-en-welke-soorten-gebeurtenissen-onderkennen-we"><bdi class="secno">2.2 </bdi>Wat zijn gebeurtenissen en welke soorten gebeurtenissen onderkennen we?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-acties"><bdi class="secno">2.3 </bdi>Wat zijn acties?</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">2.4 </bdi>Use cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li></ol></nav><section class="informative" id="context"><div class="header-wrapper"><h2 id="x1-context"><bdi class="secno">1. </bdi>Context</h2><a class="self-link" href="#context" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">1. </bdi>Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzoek-van-doccle"><bdi class="secno">1.1 </bdi>Verzoek van Doccle</a></li><li class="tocline"><a class="tocxref" href="#standaardisatie-met-mogelijkheid-tot-eigen-invulling"><bdi class="secno">1.2 </bdi>Standaardisatie met mogelijkheid tot eigen invulling</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-acties-en-gebeurtenissen"><bdi class="secno">1.3 </bdi>Voorbeelden acties en gebeurtenissen</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.4 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.5 </bdi>Doelgroep</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vertrekpunten"><bdi class="secno">2. </bdi>Vertrekpunten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wat-is-een-signaal"><bdi class="secno">2.1 </bdi>Wat is een signaal?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-gebeurtenissen-en-welke-soorten-gebeurtenissen-onderkennen-we"><bdi class="secno">2.2 </bdi>Wat zijn gebeurtenissen en welke soorten gebeurtenissen onderkennen we?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-acties"><bdi class="secno">2.3 </bdi>Wat zijn acties?</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">2.4 </bdi>Use cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sivi-afs"><bdi class="secno">3. </bdi>SIVI AFS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aansluiting-op-sivi-afs"><bdi class="secno">3.1 </bdi>Aansluiting op SIVI AFS</a></li><li class="tocline"><a class="tocxref" href="#sivi-afs-signal-entity"><bdi class="secno">3.2 </bdi>SIVI AFS signal-entity</a></li><li class="tocline"><a class="tocxref" href="#sivi-afs-action-entity"><bdi class="secno">3.3 </bdi>SIVI AFS action-entity</a></li><li class="tocline"><a class="tocxref" href="#codelijsten-gebeurtenissen"><bdi class="secno">3.4 </bdi>Codelijsten gebeurtenissen</a></li><li class="tocline"><a class="tocxref" href="#codelijst-acties"><bdi class="secno">3.5 </bdi>Codelijst acties</a></li><li class="tocline"><a class="tocxref" href="#sivi-afs-signalstructure"><bdi class="secno">3.6 </bdi>SIVI AFS signalStructure</a></li><li class="tocline"><a class="tocxref" href="#uitbreidbaarheid-en-releaseritme"><bdi class="secno">3.7 </bdi>Uitbreidbaarheid en releaseritme</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">4. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li></ol></nav><section class="informative" id="context"><div class="header-wrapper"><h2 id="x1-context"><bdi class="secno">1. </bdi>Context</h2><a class="self-link" href="#context" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
 <section id="verzoek-van-doccle"><div class="header-wrapper"><h3 id="x1-1-verzoek-van-doccle"><bdi class="secno">1.1 </bdi>Verzoek van Doccle</h3><a class="self-link" href="#verzoek-van-doccle" aria-label="Permalink for Section 1.1"></a></div>
 <p>Doccle heeft bij SIVI het verzoek neergelegd tot standaardisatie van gebeurtenissen en signalen. Dit verzoek richt zich op het standaardiseren van triggers/events (bijv. levensgebeurtenissen) en bijbehorende acties. ANVA werkt mee in dit traject.</p>
 <p>Tijdens een gebeurtenis (van de persoon zelf of een persoon in zijn/haar omgeving) moet een consument vaak allerlei acties uit (laten) voeren. De wens is dat (bijvoorbeeld) een adviseur of verzekeraar deze acties eenvoudig en gestandaardiseerd onder de aandacht van de consument kan brengen middels een signaal.</p>
@@ -403,6 +427,447 @@ SIVI gaat voor haar standaarden altijd uit van een zo generiek mogelijke invulli
 <p>Een actie is een taak die een partij moet uitvoeren naar aanleiding van een of meer gebeurtenissen. Bijvoorbeeld het updaten van de betaalgegevens (actie) wanneer de premieafschrijving gaat plaatsvinden (servicegerelateerde gebeurtenis), of het aanvragen van een zorgverzekering (actie) wanneer de consument 18 jaar wordt (levensgebeurtenis).</p>
 </section><section id="use-cases"><div class="header-wrapper"><h3 id="x2-4-use-cases"><bdi class="secno">2.4 </bdi>Use cases</h3><a class="self-link" href="#use-cases" aria-label="Permalink for Section 2.4"></a></div>
 <p>Voor deze notitie zijn vanuit Doccle en ANVA drie use cases opgesteld. Deze vind je in de bijlagen, inclusief voorbeelduitwerkingen in de voor SIVI AFS opgestelde denkrichting van deze notitie.</p>
+</section></section><section id="sivi-afs"><div class="header-wrapper"><h2 id="x3-sivi-afs"><bdi class="secno">3. </bdi>SIVI AFS</h2><a class="self-link" href="#sivi-afs" aria-label="Permalink for Section 3."></a></div>
+<section id="aansluiting-op-sivi-afs"><div class="header-wrapper"><h3 id="x3-1-aansluiting-op-sivi-afs"><bdi class="secno">3.1 </bdi>Aansluiting op SIVI AFS</h3><a class="self-link" href="#aansluiting-op-sivi-afs" aria-label="Permalink for Section 3.1"></a></div>
+<p>Binnen SIVI AFS bestaat nog geen modellering voor gebeurtenissen en/of acties. Middels deze notitie stelt SIVI voor om de volgende zaken toe te voegen aan SIVI AFS:</p>
+<ul>
+<li>Berichtstructuur voor het uitwisselen/registreren van signalen</li>
+<li>Entiteiten en attributen voor het uitwisselen/registreren van gebeurtenissen en bijbehorende acties</li>
+<li>Codelijst voor generieke levensgebeurtenissen</li>
+<li>Codelijst voor generieke servicegerelateerde gebeurtenissen</li>
+<li>Codelijst voor generieke acties</li>
+</ul>
+<p>De volgende zaken zal SIVI niet toevoegen aan SIVI AFS:</p>
+<ul>
+<li>Codelijst voor specifieke gebeurtenissen: specifieke gebeurtenissen, zoals de aanschaf van een nieuwe laptop, zal SIVI niet toevoegen aan de hierboven voorgestelde codelijst van generieke gebeurtenissen. Wel biedt de berichtstructuur voor het uitwisselen/registreren van signalen een gestandaardiseerde manier om zulke specifieke gebeurtenissen te communiceren. Partijen kunnen specifieke gebeurtenissen dan zelf definiëren binnen de kaders en context van SIVI AFS.</li>
+<li>Codelijst voor specifieke acties: specifieke acties, zoals het kopen van een verjaardagstaart wanneer iemand jarig is, zal SIVI niet toevoegen aan de hierboven voorgestelde codelijst van generieke acties. Wel biedt de berichtstructuur voor het uitwisselen/registreren van signalen een gestandaardiseerde manier om zulke specifieke acties te communiceren. Partijen kunnen specifieke acties dan zelf definiëren binnen de kaders en context van SIVI AFS.</li>
+</ul>
+</section><section id="sivi-afs-signal-entity"><div class="header-wrapper"><h3 id="x3-2-sivi-afs-signal-entity"><bdi class="secno">3.2 </bdi>SIVI AFS signal-entity</h3><a class="self-link" href="#sivi-afs-signal-entity" aria-label="Permalink for Section 3.2"></a></div>
+<p>Voor het opnemen van gegevens in het signaalbericht heeft SIVI de signal-entiteit toegevoegd aan de datacatalogus van AFD 2.0. De belangrijkste attributen binnen de signal-entiteit zijn de volgende:</p>
+<table class="simple">
+<thead>
+<tr>
+<th><strong>Attribuut</strong></th>
+<th><strong>Omschrijving</strong></th>
+<th><strong>Datatype</strong></th>
+<th><strong>Codelijst</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>entityType</td>
+<td>Standaardattribuut voor elke entiteit die het entiteitstype van de entiteit verder specificeert. Keuze uit ‘lifeEvent’ en ‘serviceEvent’.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>partyRef</td>
+<td>Verwijzing naar de partij op wie het signaal van toepassing is.</td>
+<td>[string]</td>
+<td></td>
+</tr>
+<tr>
+<td>policyRef</td>
+<td>Verwijzing naar de polis waarop het signaal van toepassing is.</td>
+<td>[string]</td>
+<td></td>
+</tr>
+<tr>
+<td>lifeEventType</td>
+<td>Code van het lifeEvent (nieuwe codelijst).</td>
+<td>string</td>
+<td>AFDLEV</td>
+</tr>
+<tr>
+<td>serviceEventType</td>
+<td>Code van het serviceEvent (nieuwe codelijst).</td>
+<td>string</td>
+<td>AFDSEV</td>
+</tr>
+<tr>
+<td>eventDescription</td>
+<td>Omschrijving van het event.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>companyNameDescription</td>
+<td>Naam van de betrokken maatschappij.</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>NB: SIVI voegt in eerste instantie twee entityTypes toe onder signal, te weten ‘lifeEvent’ en ‘serviceEvent’. Niet alle attributen zijn beschikbaar onder alle entityTypes. Op aanvraag kan SIVI attributen toevoegen en/of beschikbaar stellen onder gewenste entityTypes.</p>
+</section><section id="sivi-afs-action-entity"><div class="header-wrapper"><h3 id="x3-3-sivi-afs-action-entity"><bdi class="secno">3.3 </bdi>SIVI AFS action-entity</h3><a class="self-link" href="#sivi-afs-action-entity" aria-label="Permalink for Section 3.3"></a></div>
+<p>Voor het definiëren van acties binnen het signaalbericht heeft SIVI ook de action-entiteit toegevoegd aan de datacatalogus van AFD 2.0. De belangrijkste attributen binnen de action-entiteit zijn de volgende:</p>
+<table class="simple">
+<thead>
+<tr>
+<th><strong>Attribuut</strong></th>
+<th><strong>Omschrijving</strong></th>
+<th><strong>Datatype</strong></th>
+<th><strong>Codelijst</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>entityType</td>
+<td>Standaardattribuut voor elke entiteit die het entiteitstype van de entiteit verder specificeert. Voor nu is alles van het entityType ‘default’.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>actionType</td>
+<td>Code van het soort actie (nieuwe codelijst).</td>
+<td>string</td>
+<td>AFDACT</td>
+</tr>
+<tr>
+<td>actionDescription</td>
+<td>Omschrijving van de actie.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>priority</td>
+<td>Prioriteit van de actie.</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>actionExplanation</td>
+<td>Verdere toelichting op de actie.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td>Eventuele link naar meer info of het uitvoeren van de actie.</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="codelijsten-gebeurtenissen"><div class="header-wrapper"><h3 id="x3-4-codelijsten-gebeurtenissen"><bdi class="secno">3.4 </bdi>Codelijsten gebeurtenissen</h3><a class="self-link" href="#codelijsten-gebeurtenissen" aria-label="Permalink for Section 3.4"></a></div>
+<p>Voor generieke gebeurtenissen voegt SIVI twee codelijsten toe aan de datacatalogus van AFD 2.0. Een voor levensgebeurtenissen (AFDLEV) en een voor servicegerelateerde gebeurtenissen (AFDSEV).</p>
+<p>Voorstel voor codelijst AFDLEV:</p>
+<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Noot</span><span class="issue-label">: notie</span></div><p class="">
+Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze codelijst uitbreiden alvorens deze definitief te maken.
+</p></div>
+
+<table class="simple">
+<thead>
+<tr>
+<th><strong>Code</strong></th>
+<th><strong>Omschrijving</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>Samenwonen</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Trouwen</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Scheiden</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Samenlevingscontract afsluiten</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Kinderen krijgen</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Uit huis gaan</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Overlijden</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Overlijden partner</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Met pensioen gaan</td>
+</tr>
+<tr>
+<td>10</td>
+<td>18 jaar worden</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Gaan studeren</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Gaan studeren / stagelopen in buitenland</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Tussenjaar nemen</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Verhuizen</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Woning (ver)bouwen</td>
+</tr>
+<tr>
+<td>16</td>
+<td>ZZP’er worden</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Van baan/werkgever wisselen</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Werkloos worden</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Erven</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Pleegouder worden</td>
+</tr>
+<tr>
+<td>99</td>
+<td>Overig</td>
+</tr>
+</tbody></table>
+<p>Voor specifieke gebeurtenissen kunnen partijen code 99 kiezen en middels het attribuut lifeEventDescrption het evenement verder specificeren.</p>
+<p>Voorstel voor codelijst AFDSEV:</p>
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Noot</span><span class="issue-label">: notie</span></div><p class="">
+Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze codelijst uitbreiden alvorens deze definitief te maken.
+</p></div>
+
+<table class="simple">
+<thead>
+<tr>
+<th><strong>Code</strong></th>
+<th><strong>Omschrijving</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>Document ontvangen</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Betaling doen</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Ondertekenen</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Aflopen rentevastperiode</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Herijking opstal</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Nazorg testament</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Nazorg inboedelverzekering</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Controle CRM-gegevens</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Aankondiging premie-afschrijving</td>
+</tr>
+<tr>
+<td>99</td>
+<td>Overig</td>
+</tr>
+</tbody></table>
+<p>Voor specifieke gebeurtenissen kunnen partijen code 99 kiezen en middels het attribuut serviceEventDescrption het evenement verder specificeren.</p>
+</section><section id="codelijst-acties"><div class="header-wrapper"><h3 id="x3-5-codelijst-acties"><bdi class="secno">3.5 </bdi>Codelijst acties</h3><a class="self-link" href="#codelijst-acties" aria-label="Permalink for Section 3.5"></a></div>
+<p>Voor generieke acties voegt SIVI de codelijst AFDACT toe aan de datacatalogus van AFD 2.0:</p>
+<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Noot</span><span class="issue-label">: notie</span></div><p class="">
+Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze codelijst uitbreiden alvorens deze definitief te maken.
+</p></div>
+
+<table class="simple">
+<thead>
+<tr>
+<th><strong>Code</strong></th>
+<th><strong>Omschrijving</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>DigiD aanvragen</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Zorgverzekering afsluiten</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Studiefinanciering aanvragen</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Zorgtoeslag aanvragen</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Aangifte inkomstenbelasting</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Orgaandonatie vastleggen</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Inschrijven huurwoning</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Aansprakelijkheidsverzekering afsluiten</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Inboedelverzekering afsluiten</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Reisverzekering afsluiten</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Uitvaartverzekering afsluiten</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Aangifte van overlijden doen</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Uitvaart regelen</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Bankrekening blokkeren</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Overlijden melden bij hypotheekverstrekker</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Abonnementen opzeggen</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Abonnementen wijzigen</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Contact opnemen met financieel adviseur</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Betaalgegevens updaten</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Adresgegevens wijzigen</td>
+</tr>
+<tr>
+<td>99</td>
+<td>Overig</td>
+</tr>
+</tbody></table>
+<p>Voor specifieke acties kunnen partijen code 99 kiezen en middels het attribuut actionDescrption het action verder specificeren.</p>
+</section><section id="sivi-afs-signalstructure"><div class="header-wrapper"><h3 id="x3-6-sivi-afs-signalstructure"><bdi class="secno">3.6 </bdi>SIVI AFS signalStructure</h3><a class="self-link" href="#sivi-afs-signalstructure" aria-label="Permalink for Section 3.6"></a></div>
+<p>Voor het uitwisselen en/of registreren van signalen heeft SIVI de signalStructure opgesteld. Deze structure kan bestaan uit de volgende entiteiten op het hoogste niveau:</p>
+<table class="simple">
+<thead>
+<tr>
+<th><strong>Entiteit</strong></th>
+<th><strong>Cardinaliteit</strong></th>
+<th><strong>Omschrijving</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>commonFunctional</td>
+<td>1..n</td>
+<td>Functionele metadata over het bericht</td>
+</tr>
+<tr>
+<td>commonTechnical</td>
+<td>0..n</td>
+<td>Technische metadata over het bericht</td>
+</tr>
+<tr>
+<td>signal</td>
+<td>1..n</td>
+<td>Hoofdentiteit van het signaalbericht</td>
+</tr>
+<tr>
+<td>document</td>
+<td>0..n</td>
+<td>Optionele informatie over meegezonden documenten</td>
+</tr>
+<tr>
+<td>process</td>
+<td>0..n</td>
+<td>Optionele procesinformatie</td>
+</tr>
+</tbody></table>
+<p>Binnen de signal-entiteit kunnen meerdere action-entiteiten genest worden opgenomen die gekoppeld zijn aan de gebeurtenis zoals gedefinieerd in de signal-entiteit.</p>
+<p>Een voorbeeldbericht volgens de SIVI AFS signalStructure (in JSON):</p>
+<aside class="example" id="example-contact-point"><div class="marker">
+    <a class="self-link" href="#example-contact-point">Voorbeeld<bdi> 1</bdi></a><span class="example-title">: Contact point</span>
+  </div>
+    <pre>        <code aria-busy="false" class="hljs json">
+{
+<span class="hljs-attr">"signal"</span>: [{
+    <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"serviceEvent"</span>, 
+    <span class="hljs-attr">"partyRef"</span>: [<span class="hljs-string">"bwsflk189"</span>],
+    <span class="hljs-attr">"policyRef"</span>: [<span class="hljs-string">"DFNUI29324176S"</span>],
+    <span class="hljs-attr">"serviceEventType"</span>: <span class="hljs-string">"09"</span>,
+    <span class="hljs-attr">"eventDescription"</span>: <span class="hljs-string">"Aankondiging premie-afschrijving"</span>,
+    <span class="hljs-attr">"companyNameDescription"</span>: <span class="hljs-string">"Allianz"</span>,
+    <span class="hljs-attr">"action"</span>: [{
+        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-attr">"actionType"</span>: <span class="hljs-string">"19"</span>,
+        <span class="hljs-attr">"actionDescription"</span>: <span class="hljs-string">"Rekening controleren"</span>,
+        <span class="hljs-attr">"priority"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"actionExplanation"</span>: <span class="hljs-string">"Zorg ervoor dat je voldoende saldo op je rekening hebt en dat we de juiste betaalgegevens hebben"</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"http://mijnaccount.allianz.nl"</span>
+    }],
+    <span class="hljs-attr">"document"</span>: [{
+        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-attr">"messageSubject"</span>: <span class="hljs-string">"Onderwerp van de e-mail"</span>,
+        <span class="hljs-attr">"toAddress"</span>: <span class="hljs-string">"j.janssen@..."</span>,
+        <span class="hljs-attr">"replyAddress"</span>: <span class="hljs-string">"support@allianz.nl"</span>
+    }]
+}]}
+        </code></pre>
+</aside>
+
+</section><section id="uitbreidbaarheid-en-releaseritme"><div class="header-wrapper"><h3 id="x3-7-uitbreidbaarheid-en-releaseritme"><bdi class="secno">3.7 </bdi>Uitbreidbaarheid en releaseritme</h3><a class="self-link" href="#uitbreidbaarheid-en-releaseritme" aria-label="Permalink for Section 3.7"></a></div>
+<p>De SIVI-standaarden zijn op maandbasis uitbreidbaar. Aanvragen voor wijzigingen/uitbreidingen gaan via het wijzigingsformulier, te downloaden via de website van <a href="https://www.sivi.org/sivi-afs/sivi-all-finance-standaard/">SIVI AFS</a> (rechts in kader onder ‘Vragen en wijzigingsverzoeken’). Het advies is rekening te houden met de releaseplanning.</p>
 </section></section>
   <script>
     let content = "";
@@ -417,7 +882,7 @@ SIVI gaat voor haar standaarden altijd uit van een zo generiek mogelijke invulli
 
     document.getElementById("sotd").insertAdjacentHTML('afterend', content);
   </script>
-  <section id="conformance"><div class="header-wrapper"><h2 id="x3-conformiteit"><bdi class="secno">3. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 3."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
+  <section id="conformance"><div class="header-wrapper"><h2 id="x4-conformiteit"><bdi class="secno">4. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 4."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
   <section id="tof"></section>
   <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
     <div class="header-wrapper"><h3 id="a-1-begrippen-gedefinieerd-door-deze-specificatie"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>

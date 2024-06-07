@@ -4,7 +4,7 @@ let respecConfig = {
   useLabel: true,
   license: "cc0",
   specStatus: "wv",
-  specType: "ST",
+  specType: "HR",
   pubDomain: "ronl",
 
   // shortName = Repository name

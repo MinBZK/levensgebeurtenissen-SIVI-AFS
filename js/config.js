@@ -41,7 +41,7 @@ let respecConfig = {
   alternateFormats: [
     {
       label: "pdf",
-      uri: "levensgebeurtenissen-SIVI-AFS.pdf",
+      uri: "https://regels.overheid.nl/publicaties/levensgebeurtenissen-sivi-afs/pdf",
     },
   ],
 };

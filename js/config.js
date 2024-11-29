@@ -9,7 +9,7 @@ let respecConfig = {
 
   // shortName = Repository name
   shortName: "levensgebeurtenissen-SIVI-AFS ",
-  publishDate: "2024-06-07",
+  publishDate: "2024-07-09",
   publishVersion: "1.0.1",
 
   previousPublishVersion: "",

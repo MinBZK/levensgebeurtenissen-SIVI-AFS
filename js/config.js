@@ -10,7 +10,7 @@ let respecConfig = {
   // shortName = Repository name
   shortName: "levensgebeurtenissen-SIVI-AFS ",
   publishDate: "2024-06-07",
-  publishVersion: "1.0.0",
+  publishVersion: "1.0.1",
 
   previousPublishVersion: "",
   previousPublishDate: "",
@@ -41,7 +41,7 @@ let respecConfig = {
   alternateFormats: [
     {
       label: "pdf",
-      uri: "levensgebeurtenissen-SIVI-AFS.pdf",
+      uri: "https://regels.overheid.nl/standaarden/levensgebeurtenissen-SIVI-AFS/pdf",
     },
   ],
 };

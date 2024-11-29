@@ -1,15 +1,13 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 34.1.4">
+<meta name="generator" content="ReSpec 35.1.1">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
 div.illegal-example{color:red}
 div.illegal-example p{color:#000}
-:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
 aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
-.example pre{background-color:rgba(0,0,0,.03)}
 </style>
 <style>
 .issue-label{text-transform:initial}
@@ -18,7 +16,7 @@ aside.example div.example{border-left-width:.1em;border-color:#999;background:#f
 span.warning{padding:.1em .5em .15em}
 .issue.closed span.issue-number{text-decoration:line-through}
 .issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
-.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
 .warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
 li.task-list-item{list-style:none}
 input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
@@ -26,13 +24,13 @@ input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
 </style>
 <style>
 dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
-.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
-.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
 .dfn-panel *{margin:0}
-.dfn-panel b{display:block;color:#000;margin-top:.25em}
-.dfn-panel ul a[href]{color:#333}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
 .dfn-panel>div{display:flex}
 .dfn-panel a.self-link{font-weight:700;margin-right:auto}
 .dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
@@ -65,8 +63,6 @@ dfn{cursor:pointer}
 25%{transform:scale(1.25,1.25);opacity:.75}
 100%{transform:scale(1,1)}
 }
-:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
-dfn{font-weight:700}
 a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
 a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
 a.bibref{text-decoration:none}
@@ -80,20 +76,8 @@ a.bibref{text-decoration:none}
 cite .bibref{font-style:normal}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
-.toc a,.tof a{text-decoration:none}
-a .figno,a .secno{color:#000}
 ol.tof,ul.tof{list-style:none outside none}
 .caption{margin-top:.5em;font-style:italic}
-table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
-.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
-.simple th a{color:#fff;padding:3px 5px;text-align:left}
-.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
-.simple td{padding:3px 10px;border-top:1px solid #ddd}
-.simple tr:nth-child(even){background:#f0f6ff}
-.section dd>p:first-child{margin-top:0}
-.section dd>p:last-child{margin-bottom:0}
-.section dd{margin-bottom:1em}
-.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
 #issue-summary>ul{column-count:2}
 #issue-summary li{list-style:none;display:inline-block}
 details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
@@ -130,17 +114,21 @@ ul.index code{color:inherit}
 #index-defined-here .print-only{display:initial}
 }
 </style>
-<meta name="description" content="Tekst">
+<meta name="description" content="De SIVI All Finance Standaard (SIVI AFS) maakt digitaal zakendoen binnen de financiële dienstverlening sneller en beter.">
 <style>
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
-.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
-.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
-.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
-.hljs-literal{color:#0b76c5}
-.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
-.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
-.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
-.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
+@media (prefers-color-scheme:dark){
+.hljs{--base:#282c34;--mono-1:#abb2bf;--mono-2:#818896;--mono-3:#5c6370;--hue-1:#56b6c2;--hue-2:#61aeee;--hue-3:#c678dd;--hue-4:#98c379;--hue-5:#e06c75;--hue-5-2:#be5046;--hue-6:#d19a66;--hue-6-2:#e6c07b}
+}
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;color:var(--mono-1,#383a42);background:#fafafa;background:var(--base,#fafafa)}
+.hljs-comment,.hljs-quote{color:#717277;color:var(--mono-3,#717277);font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4;color:var(--hue-3,#a626a4)}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;color:var(--hue-5,#ca4706);font-weight:700}
+.hljs-literal{color:#0b76c5;color:var(--hue-1,#0b76c5)}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c;color:var(--hue-4,#42803c)}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01;color:var(--hue-6-2,#9a6a01)}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801;color:var(--hue-6,#986801)}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3;color:var(--hue-2,#336ae3)}
 .hljs-emphasis{font-style:italic}
 .hljs-strong{font-weight:700}
 .hljs-link{text-decoration:underline}
@@ -171,7 +159,7 @@ ul.index code{color:inherit}
 <script id="initialUserConfig" type="application/json">{
   "nl_organisationName": "MinBZK",
   "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
-  "nl_organisationPublishURL": "https://regels.overheid.nl/publicaties/",
+  "nl_organisationPublishURL": "https://regels.overheid.nl/standaarden/",
   "logos": [
     {
       "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
@@ -299,8 +287,8 @@ ul.index code{color:inherit}
   "specType": "HR",
   "pubDomain": "ronl",
   "shortName": "levensgebeurtenissen-SIVI-AFS ",
-  "publishDate": "2024-06-07",
-  "publishVersion": "1.0.0",
+  "publishDate": "2024-07-09",
+  "publishVersion": "1.0.1",
   "previousPublishVersion": "",
   "previousPublishDate": "",
   "previousMaturity": "",
@@ -344,14 +332,14 @@ ul.index code{color:inherit}
     <h2>
       MinBZK Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2024-06-07">07 juni 2024</time>
+      <time class="dt-published" datetime="2024-07-09">29 november 2024</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
               <a class="u-url status" href="https://minbzk.github.io/levensgebeurtenissen-SIVI-AFS/">https://minbzk.github.io/levensgebeurtenissen-SIVI-AFS/</a>
             </dd>
       <dt>Laatst gepubliceerde versie:</dt><dd>
-              <a href="https://regels.overheid.nl/publicaties/levensgebeurtenissen-sivi-afs ">https://regels.overheid.nl/publicaties/levensgebeurtenissen-sivi-afs </a>
+              <a href="https://regels.overheid.nl/standaarden/levensgebeurtenissen-sivi-afs ">https://regels.overheid.nl/standaarden/levensgebeurtenissen-sivi-afs </a>
             </dd>
       <dt>Laatste werkversie:</dt><dd><a href="https://minbzk.github.io/levensgebeurtenissen-SIVI-AFS/">https://minbzk.github.io/levensgebeurtenissen-SIVI-AFS/</a></dd>
       
@@ -389,7 +377,14 @@ ul.index code{color:inherit}
         </p>
     <hr title="Separator for header">
   </div>
-  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Tekst</p>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>De SIVI All Finance Standaard (SIVI AFS) maakt digitaal zakendoen binnen de financiële dienstverlening sneller en beter.</p>
+<p>SIVI AFS wordt toegepast door ketenpartijen als verzekeraars, serviceproviders en intermediairs, maar ook door de belangrijkste software- en toeleveranciers, voor:</p>
+<ul>
+<li>Uitwisselen van gegevens</li>
+<li>Registratie van gegevens</li>
+<li>Ontwikkelen van services</li>
+</ul>
+<p>Deze specificatie beoogt een standaard voor levensgebeurtenissen en bijbehorende acties te formuleren in de context van de SIVI AFS.</p>
 </section>
   <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">1. </bdi>Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzoek-van-doccle"><bdi class="secno">1.1 </bdi>Verzoek van Doccle</a></li><li class="tocline"><a class="tocxref" href="#standaardisatie-met-mogelijkheid-tot-eigen-invulling"><bdi class="secno">1.2 </bdi>Standaardisatie met mogelijkheid tot eigen invulling</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-acties-en-gebeurtenissen"><bdi class="secno">1.3 </bdi>Voorbeelden acties en gebeurtenissen</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.4 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.5 </bdi>Doelgroep</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vertrekpunten"><bdi class="secno">2. </bdi>Vertrekpunten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wat-is-een-signaal"><bdi class="secno">2.1 </bdi>Wat is een signaal?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-gebeurtenissen-en-welke-soorten-gebeurtenissen-onderkennen-we"><bdi class="secno">2.2 </bdi>Wat zijn gebeurtenissen en welke soorten gebeurtenissen onderkennen we?</a></li><li class="tocline"><a class="tocxref" href="#wat-zijn-acties"><bdi class="secno">2.3 </bdi>Wat zijn acties?</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">2.4 </bdi>Use cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sivi-afs"><bdi class="secno">3. </bdi>SIVI AFS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aansluiting-op-sivi-afs"><bdi class="secno">3.1 </bdi>Aansluiting op SIVI AFS</a></li><li class="tocline"><a class="tocxref" href="#sivi-afs-signal-entity"><bdi class="secno">3.2 </bdi>SIVI AFS signal-entity</a></li><li class="tocline"><a class="tocxref" href="#sivi-afs-action-entity"><bdi class="secno">3.3 </bdi>SIVI AFS action-entity</a></li><li class="tocline"><a class="tocxref" href="#codelijsten-gebeurtenissen"><bdi class="secno">3.4 </bdi>Codelijsten gebeurtenissen</a></li><li class="tocline"><a class="tocxref" href="#codelijst-acties"><bdi class="secno">3.5 </bdi>Codelijst acties</a></li><li class="tocline"><a class="tocxref" href="#sivi-afs-signalstructure"><bdi class="secno">3.6 </bdi>SIVI AFS signalStructure</a></li><li class="tocline"><a class="tocxref" href="#uitbreidbaarheid-en-releaseritme"><bdi class="secno">3.7 </bdi>Uitbreidbaarheid en releaseritme</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voorbeelden"><bdi class="secno">4. </bdi>Voorbeelden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-case-1-servicegerelateerde-gebeurtenis"><bdi class="secno">4.1 </bdi>Use case 1: servicegerelateerde gebeurtenis</a></li><li class="tocline"><a class="tocxref" href="#use-case-2-levensgebeurtenis-initiatief-bij-aanbieder"><bdi class="secno">4.2 </bdi>Use case 2: levensgebeurtenis, initiatief bij aanbieder</a></li><li class="tocline"><a class="tocxref" href="#use-case-3-levensgebeurtenis-initiatief-bij-consument"><bdi class="secno">4.3 </bdi>Use case 3: levensgebeurtenis, initiatief bij consument</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">5. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">6. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li></ol></nav><section class="informative" id="context"><div class="header-wrapper"><h2 id="x1-context"><bdi class="secno">1. </bdi>Context</h2><a class="self-link" href="#context" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
 <section id="verzoek-van-doccle"><div class="header-wrapper"><h3 id="x1-1-verzoek-van-doccle"><bdi class="secno">1.1 </bdi>Verzoek van Doccle</h3><a class="self-link" href="#verzoek-van-doccle" aria-label="Permalink for Section 1.1"></a></div>
@@ -445,7 +440,7 @@ SIVI gaat voor haar standaarden altijd uit van een zo generiek mogelijke invulli
 </ul>
 </section><section id="sivi-afs-signal-entity"><div class="header-wrapper"><h3 id="x3-2-sivi-afs-signal-entity"><bdi class="secno">3.2 </bdi>SIVI AFS signal-entity</h3><a class="self-link" href="#sivi-afs-signal-entity" aria-label="Permalink for Section 3.2"></a></div>
 <p>Voor het opnemen van gegevens in het signaalbericht heeft SIVI de signal-entiteit toegevoegd aan de datacatalogus van AFD 2.0. De belangrijkste attributen binnen de signal-entiteit zijn de volgende:</p>
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th><strong>Attribuut</strong></th>
@@ -500,7 +495,7 @@ SIVI gaat voor haar standaarden altijd uit van een zo generiek mogelijke invulli
 <p>NB: SIVI voegt in eerste instantie twee entityTypes toe onder signal, te weten ‘lifeEvent’ en ‘serviceEvent’. Niet alle attributen zijn beschikbaar onder alle entityTypes. Op aanvraag kan SIVI attributen toevoegen en/of beschikbaar stellen onder gewenste entityTypes.</p>
 </section><section id="sivi-afs-action-entity"><div class="header-wrapper"><h3 id="x3-3-sivi-afs-action-entity"><bdi class="secno">3.3 </bdi>SIVI AFS action-entity</h3><a class="self-link" href="#sivi-afs-action-entity" aria-label="Permalink for Section 3.3"></a></div>
 <p>Voor het definiëren van acties binnen het signaalbericht heeft SIVI ook de action-entiteit toegevoegd aan de datacatalogus van AFD 2.0. De belangrijkste attributen binnen de action-entiteit zijn de volgende:</p>
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th><strong>Attribuut</strong></th>
@@ -553,7 +548,7 @@ SIVI gaat voor haar standaarden altijd uit van een zo generiek mogelijke invulli
 Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze codelijst uitbreiden alvorens deze definitief te maken.
 </p></div>
 
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th><strong>Code</strong></th>
@@ -651,7 +646,7 @@ Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze 
 Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze codelijst uitbreiden alvorens deze definitief te maken.
 </p></div>
 
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th><strong>Code</strong></th>
@@ -706,7 +701,7 @@ Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze 
 Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze codelijst uitbreiden alvorens deze definitief te maken.
 </p></div>
 
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th><strong>Code</strong></th>
@@ -801,7 +796,7 @@ Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze 
 <p>Voor specifieke acties kunnen partijen code 99 kiezen en middels het attribuut actionDescrption het action verder specificeren.</p>
 </section><section id="sivi-afs-signalstructure"><div class="header-wrapper"><h3 id="x3-6-sivi-afs-signalstructure"><bdi class="secno">3.6 </bdi>SIVI AFS signalStructure</h3><a class="self-link" href="#sivi-afs-signalstructure" aria-label="Permalink for Section 3.6"></a></div>
 <p>Voor het uitwisselen en/of registreren van signalen heeft SIVI de signalStructure opgesteld. Deze structure kan bestaan uit de volgende entiteiten op het hoogste niveau:</p>
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th><strong>Entiteit</strong></th>
@@ -840,29 +835,29 @@ Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze 
     <a class="self-link" href="#example-sivi-afs-signalstructure-in-json">Voorbeeld<bdi> 1</bdi></a><span class="example-title">: SIVI AFS signalStructure (in JSON)</span>
   </div>
     <pre>        <code aria-busy="false" class="hljs json">
-{
-<span class="hljs-attr">"signal"</span>: [{
-    <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"serviceEvent"</span>, 
-    <span class="hljs-attr">"partyRef"</span>: [<span class="hljs-string">"bwsflk189"</span>],
-    <span class="hljs-attr">"policyRef"</span>: [<span class="hljs-string">"DFNUI29324176S"</span>],
-    <span class="hljs-attr">"serviceEventType"</span>: <span class="hljs-string">"09"</span>,
-    <span class="hljs-attr">"eventDescription"</span>: <span class="hljs-string">"Aankondiging premie-afschrijving"</span>,
-    <span class="hljs-attr">"companyNameDescription"</span>: <span class="hljs-string">"Allianz"</span>,
-    <span class="hljs-attr">"action"</span>: [{
-        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
-        <span class="hljs-attr">"actionType"</span>: <span class="hljs-string">"19"</span>,
-        <span class="hljs-attr">"actionDescription"</span>: <span class="hljs-string">"Rekening controleren"</span>,
-        <span class="hljs-attr">"priority"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">"actionExplanation"</span>: <span class="hljs-string">"Zorg ervoor dat je voldoende saldo op je rekening hebt en dat we de juiste betaalgegevens hebben"</span>,
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"http://mijnaccount.allianz.nl"</span>
-    }],
-    <span class="hljs-attr">"document"</span>: [{
-        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
-        <span class="hljs-attr">"messageSubject"</span>: <span class="hljs-string">"Onderwerp van de e-mail"</span>,
-        <span class="hljs-attr">"toAddress"</span>: <span class="hljs-string">"j.janssen@..."</span>,
-        <span class="hljs-attr">"replyAddress"</span>: <span class="hljs-string">"support@allianz.nl"</span>
-    }]
-}]}
+<span class="hljs-punctuation">{</span>
+<span class="hljs-attr">"signal"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"serviceEvent"</span><span class="hljs-punctuation">,</span> 
+    <span class="hljs-attr">"partyRef"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"bwsflk189"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"policyRef"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"DFNUI29324176S"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"serviceEventType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"09"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"eventDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Aankondiging premie-afschrijving"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"companyNameDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Allianz"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"action"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"19"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Rekening controleren"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionExplanation"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Zorg ervoor dat je voldoende saldo op je rekening hebt en dat we de juiste betaalgegevens hebben"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"http://mijnaccount.allianz.nl"</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"document"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"messageSubject"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Onderwerp van de e-mail"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"toAddress"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"j.janssen@..."</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"replyAddress"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"support@allianz.nl"</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span>
         </code></pre>
 </aside>
 
@@ -889,29 +884,29 @@ Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze 
     <a class="self-link" href="#example-sivi-afs-signalstructure-in-json-0">Voorbeeld<bdi> 2</bdi></a><span class="example-title">: SIVI AFS signalStructure (in JSON)</span>
   </div>
     <pre>        <code aria-busy="false" class="hljs json">
-{
-<span class="hljs-attr">"signal"</span>: [{
-    <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"serviceEvent"</span>,
-    <span class="hljs-attr">"partyRef"</span>: [<span class="hljs-string">"bwsflk189"</span>],
-    <span class="hljs-attr">"policyRef"</span>: [<span class="hljs-string">"DFNUI29324176S"</span>],
-    <span class="hljs-attr">"serviceEventType"</span>: <span class="hljs-string">"09"</span>,
-    <span class="hljs-attr">"eventDescription"</span>: <span class="hljs-string">"Aankondiging premie-afschrijving"</span>,
-    <span class="hljs-attr">"companyNameDescription"</span>: <span class="hljs-string">"Allianz"</span>,
-    <span class="hljs-attr">"action"</span>: [{
-        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
-        <span class="hljs-attr">"actionType"</span>: <span class="hljs-string">"19"</span>,
-        <span class="hljs-attr">"actionDescription"</span>: <span class="hljs-string">"Rekening controleren"</span>,
-        <span class="hljs-attr">"priority"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">"actionExplanation"</span>: <span class="hljs-string">"Zorg ervoor dat je voldoende saldo op je rekening hebt en dat we de juiste betaalgegevens hebben"</span>,
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"http://mijnaccount.allianz.nl"</span>
-    }],
-    <span class="hljs-attr">"document"</span>: [{
-        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
-        <span class="hljs-attr">"messageSubject"</span>: <span class="hljs-string">"Onderwerp van de e-mail"</span>,
-        <span class="hljs-attr">"toAddress"</span>: <span class="hljs-string">"j.janssen@..."</span>,
-        <span class="hljs-attr">"replyAddress"</span>: <span class="hljs-string">"support@allianz.nl"</span>
-    }]
-}]}
+<span class="hljs-punctuation">{</span>
+<span class="hljs-attr">"signal"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"serviceEvent"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"partyRef"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"bwsflk189"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"policyRef"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"DFNUI29324176S"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"serviceEventType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"09"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"eventDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Aankondiging premie-afschrijving"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"companyNameDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Allianz"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"action"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"19"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Rekening controleren"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionExplanation"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Zorg ervoor dat je voldoende saldo op je rekening hebt en dat we de juiste betaalgegevens hebben"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"http://mijnaccount.allianz.nl"</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"document"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"messageSubject"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Onderwerp van de e-mail"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"toAddress"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"j.janssen@..."</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"replyAddress"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"support@allianz.nl"</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span>
         </code></pre>
 </aside>
 
@@ -928,35 +923,35 @@ Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze 
     <a class="self-link" href="#example-sivi-afs-signalstructure-in-json-1">Voorbeeld<bdi> 3</bdi></a><span class="example-title">: SIVI AFS signalStructure (in JSON)</span>
   </div>
     <pre>        <code aria-busy="false" class="hljs json">
-{
-<span class="hljs-attr">"signal"</span>: [{
-    <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"lifeEvent"</span>, 
-    <span class="hljs-attr">"partyRef"</span>: [<span class="hljs-string">"alexappelhof21"</span>],
-    <span class="hljs-attr">"lifeEventType"</span>: <span class="hljs-string">"10"</span>,
-    <span class="hljs-attr">"eventDescription"</span>: <span class="hljs-string">"18 jaar worden"</span>,
-    <span class="hljs-attr">"action"</span>: [{
-        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
-        <span class="hljs-attr">"actionType"</span>: <span class="hljs-string">"01"</span>,
-        <span class="hljs-attr">"actionDescription"</span>: <span class="hljs-string">"DigiD aanvragen"</span>,
-        <span class="hljs-attr">"priority"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">"actionExplanation"</span>: <span class="hljs-string">"Als je 18 jaar wordt heb je een DigiD nodig"</span>,
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"http://digid.nl"</span>
-    },
-    {
-        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
-        <span class="hljs-attr">"actionType"</span>: <span class="hljs-string">"02"</span>,
-        <span class="hljs-attr">"actionDescription"</span>: <span class="hljs-string">"Zorgverzekering afsluiten"</span>,
-        <span class="hljs-attr">"priority"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">"actionExplanation"</span>: <span class="hljs-string">"Als je 18 jaar wordt heb je een eigen zorgverzekering nodig"</span>,
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"http://independer.nl"</span>
-    },
-    {
-        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
-        <span class="hljs-attr">"actionType"</span>: <span class="hljs-string">"99"</span>,
-        <span class="hljs-attr">"actionDescription"</span>: <span class="hljs-string">"Taart kopen"</span>,
-        <span class="hljs-attr">"priority"</span>: <span class="hljs-number">2</span>
-    }]
-}]}
+<span class="hljs-punctuation">{</span>
+<span class="hljs-attr">"signal"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"lifeEvent"</span><span class="hljs-punctuation">,</span> 
+    <span class="hljs-attr">"partyRef"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"alexappelhof21"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"lifeEventType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"10"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"eventDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"18 jaar worden"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"action"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"01"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"DigiD aanvragen"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionExplanation"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Als je 18 jaar wordt heb je een DigiD nodig"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"http://digid.nl"</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"02"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Zorgverzekering afsluiten"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionExplanation"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Als je 18 jaar wordt heb je een eigen zorgverzekering nodig"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"http://independer.nl"</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"99"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Taart kopen"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span>
         </code></pre>
 </aside>
 
@@ -973,20 +968,20 @@ Dit is een eerste opzet. Aan de hand van input van Doccle en ANVA zal SIVI deze 
     <a class="self-link" href="#example-sivi-afs-signalstructure-in-json-2">Voorbeeld<bdi> 4</bdi></a><span class="example-title">: SIVI AFS signalStructure (in JSON)</span>
   </div>
     <pre>        <code aria-busy="false" class="hljs json">
-{
-<span class="hljs-attr">"signal"</span>: [{
-    <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"lifeEvent"</span>,
-    <span class="hljs-attr">"partyRef"</span>: [<span class="hljs-string">"olagemaat23z5"</span>],
-    <span class="hljs-attr">"lifeEventType"</span>: <span class="hljs-string">"14"</span>,
-    <span class="hljs-attr">"eventDescription"</span>: <span class="hljs-string">"Verhuizing"</span>,
-    <span class="hljs-attr">"action"</span>: [{
-        <span class="hljs-attr">"entityType"</span>: <span class="hljs-string">"default"</span>,
-        <span class="hljs-attr">"actionType"</span>: <span class="hljs-string">"20"</span>,
-        <span class="hljs-attr">"actionDescription"</span>: <span class="hljs-string">"Adres wijzigen"</span>,
-        <span class="hljs-attr">"priority"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">"actionExplanation"</span>: <span class="hljs-string">"Adres van klant wijzigen"</span> 
-    }]
-}]}
+<span class="hljs-punctuation">{</span>
+<span class="hljs-attr">"signal"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"lifeEvent"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"partyRef"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"olagemaat23z5"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"lifeEventType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"14"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"eventDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Verhuizing"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"action"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"entityType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"default"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"20"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionDescription"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Adres wijzigen"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"priority"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"actionExplanation"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Adres van klant wijzigen"</span> 
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span>
         </code></pre>
 </aside></section></section>
   <script>
